@@ -26,8 +26,9 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    marginLeft: 20,
+    flex: 1,
     fontSize: 26,
     color: Colors.accent,
+    textAlign: 'center',
   },
 });
