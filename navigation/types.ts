@@ -1,4 +1,4 @@
 export type TypeRootStackParamList = {
   CategoryScreen: undefined;
-  MealsOverViewScreen: undefined;
+  MealsOverViewScreen: { categoryId: string };
 };

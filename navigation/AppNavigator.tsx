@@ -2,13 +2,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { CategoryScreen } from '../screens/CategoryScreen';
 import { MealsOverViewScreen } from '../screens/MealsOverViewScreen';
+import { TypeRootStackParamList } from './types';
 
-export type RootStackParamList = {
-  CategoryScreen: undefined;
-  MealsOverViewScreen: undefined;
-};
-
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator<TypeRootStackParamList>();
 
 export const AppNavigator = () => {
   return (

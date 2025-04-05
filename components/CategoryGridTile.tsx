@@ -10,11 +10,12 @@ type Props = {
 }
 
 export const CategoryGridTile = ({ categoryItem }: Props) => {
-  const { title, color } = categoryItem;
+  const { title, color, id } = categoryItem;
 
   const navigation = useNavigation<NativeStackNavigationProp<TypeRootStackParamList>>();
 
-  const navigateToMealsPage = () => navigation.navigate('MealsOverViewScreen');
+  const navigateToMealsPage = (categoryId: string) => () =>
+    navigation.navigate('MealsOverViewScreen', { categoryId });
 
   return (
     <View style={styles.gridItem}>
@@ -24,7 +25,7 @@ export const CategoryGridTile = ({ categoryItem }: Props) => {
           styles.button,
           pressed ? styles.buttonPressed : null,
         ]}
-        onPress={navigateToMealsPage}
+        onPress={navigateToMealsPage(id)}
       >
         <View style={[styles.innerContainer, { backgroundColor: color }]}>
           <Text style={styles.title}>{title}</Text>
