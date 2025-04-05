@@ -1,21 +1,26 @@
 import { StyleSheet, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import { NavigationContainer } from '@react-navigation/native';
 
-import { CategoryScreen } from './screens/CategoryScreen';
+import { AppNavigator } from './navigation/AppNavigator';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
 
-      <CategoryScreen />
+      <NavigationContainer>
+        <AppNavigator />
+      </NavigationContainer>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 10,
-    paddingVertical: 32,
+    flex: 1,
+    paddingHorizontal: 16,
+    paddingTop: 50,
+    paddingBottom: 30,
   },
 });

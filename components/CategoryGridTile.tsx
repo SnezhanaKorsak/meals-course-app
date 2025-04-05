@@ -1,6 +1,9 @@
+import { useNavigation } from '@react-navigation/native';
 import { Pressable, View, Text, StyleSheet, Platform } from 'react-native';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import { CATEGORIES } from '../data/dummy-data';
+import { TypeRootStackParamList } from '../navigation/types';
 
 type Props = {
   categoryItem: typeof CATEGORIES[number];
@@ -8,6 +11,10 @@ type Props = {
 
 export const CategoryGridTile = ({ categoryItem }: Props) => {
   const { title, color } = categoryItem;
+
+  const navigation = useNavigation<NativeStackNavigationProp<TypeRootStackParamList>>();
+
+  const navigateToMealsPage = () => navigation.navigate('MealsOverViewScreen');
 
   return (
     <View style={styles.gridItem}>
@@ -17,6 +24,7 @@ export const CategoryGridTile = ({ categoryItem }: Props) => {
           styles.button,
           pressed ? styles.buttonPressed : null,
         ]}
+        onPress={navigateToMealsPage}
       >
         <View style={[styles.innerContainer, { backgroundColor: color }]}>
           <Text style={styles.title}>{title}</Text>

@@ -78,13 +78,13 @@ package-lock.json
 # OS X
 .DS_Store
 
-# Test generated files
+# MealsOverViewScreen generated files
 *.js.meta
 
 /coverage
 /third-party
 
-# Test Reports
+# MealsOverViewScreen Reports
 /reports
 
 # Stack Dumps generated when programs crash (Ex. bash.exe.stackdump on Win)

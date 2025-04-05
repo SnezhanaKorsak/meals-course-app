@@ -1,0 +1,28 @@
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import { CategoryScreen } from '../screens/CategoryScreen';
+import { MealsOverViewScreen } from '../screens/MealsOverViewScreen';
+
+export type RootStackParamList = {
+  CategoryScreen: undefined;
+  MealsOverViewScreen: undefined;
+};
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
+
+export const AppNavigator = () => {
+  return (
+    <Stack.Navigator
+      initialRouteName="CategoryScreen"
+      screenOptions={{
+        headerShown: false,
+        contentStyle: { backgroundColor: '#24180f' },
+        animation: 'slide_from_right',
+        animationDuration: 300,
+      }}
+    >
+      <Stack.Screen name="CategoryScreen" component={CategoryScreen} />
+      <Stack.Screen name="MealsOverViewScreen" component={MealsOverViewScreen} />
+    </Stack.Navigator>
+  );
+};
