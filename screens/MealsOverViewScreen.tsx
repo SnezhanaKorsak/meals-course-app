@@ -20,6 +20,7 @@ export const MealsOverViewScreen = () => {
     const item = itemData.item;
 
     const mealItemProps = {
+      mealId: item.id,
       title: item.title,
       imageUrl: item.imageUrl,
       affordability: item.affordability,

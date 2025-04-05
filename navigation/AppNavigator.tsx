@@ -2,6 +2,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { CategoryScreen } from '../screens/CategoryScreen';
 import { MealsOverViewScreen } from '../screens/MealsOverViewScreen';
+import { MealDetailsScreen } from '../screens/MealDetailsScreen';
+
 import { TypeRootStackParamList } from './types';
 
 const Stack = createNativeStackNavigator<TypeRootStackParamList>();
@@ -19,6 +21,7 @@ export const AppNavigator = () => {
     >
       <Stack.Screen name="CategoryScreen" component={CategoryScreen} />
       <Stack.Screen name="MealsOverViewScreen" component={MealsOverViewScreen} />
+      <Stack.Screen name="MealDetailsScreen" component={MealDetailsScreen} />
     </Stack.Navigator>
   );
 };
